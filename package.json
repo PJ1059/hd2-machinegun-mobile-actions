@@ -1,0 +1,12 @@
+{
+  "name": "mg43-mobile-reload-preview",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "check": "node --check viewer.js && node --check server.mjs"
+  },
+  "dependencies": {
+    "three": "0.180.0"
+  }
+}

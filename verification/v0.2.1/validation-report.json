@@ -1,0 +1,376 @@
+{
+  "version": "0.2.1",
+  "status": "offline-validated-not-game-tested",
+  "assetValidation": {
+    "status": "offline-visual-prototype-not-game-tested",
+    "archive": "18235e0c9ec0e636",
+    "resources": [
+      {
+        "name": "4cb7b7c50f25ddc0",
+        "originalAnimation": "f9761fd85530ae0f",
+        "type": "animation",
+        "size": 636832,
+        "sha256": "bb61c23f0a91f8a6db14242e628bd4d1e899f8b9b63dbcdaf4bc0ba9d62f8305",
+        "independentNativeCheck": {
+          "reader": "HD2SDK Community Edition",
+          "bones": 90,
+          "keys": 12892,
+          "duration": 4.983333110809326,
+          "maxCurveValueError": 0.0
+        }
+      },
+      {
+        "name": "7d8cc9583080a3a4",
+        "originalAnimation": "b72125ac2aa44568",
+        "type": "animation",
+        "size": 483052,
+        "sha256": "82697ef3f6c01b654972b7cc0d5fd3f3ceeb70d1e879262f5b59c60fa0238c19",
+        "independentNativeCheck": {
+          "reader": "HD2SDK Community Edition",
+          "bones": 90,
+          "keys": 9803,
+          "duration": 4.166666507720947,
+          "maxCurveValueError": 0.0
+        }
+      },
+      {
+        "name": "4d1c334d294dfa97",
+        "type": "state_machine",
+        "size": 11323840,
+        "sha256": "a89f3a0c890592bb198e5b414d7f42a2d269558816fd069145482bd2f78567d3"
+      }
+    ],
+    "stateMachine": {
+      "changes": [
+        {
+          "layer": 10,
+          "state": 600,
+          "offset": 8890928,
+          "maskBefore": -1,
+          "maskAfter": 40,
+          "animationBefore": "f9761fd85530ae0f",
+          "animationAfter": "4cb7b7c50f25ddc0"
+        },
+        {
+          "layer": 10,
+          "state": 601,
+          "offset": 8899912,
+          "maskBefore": -1,
+          "maskAfter": 40,
+          "animationBefore": "b72125ac2aa44568",
+          "animationAfter": "7d8cc9583080a3a4"
+        }
+      ],
+      "changedByteCount": 24,
+      "sourceSha256": "f8e38f6beba1af4a8c880ebbf96c858714698a577a2eb16b6dbdc11644514571",
+      "resultSha256": "a89f3a0c890592bb198e5b414d7f42a2d269558816fd069145482bd2f78567d3",
+      "proneStateRecords": "unchanged",
+      "otherStateRecords": "unchanged"
+    },
+    "packageDependencies": {
+      "resource": "18235e0c9ec0e636",
+      "path": "packages/content/global_resources",
+      "type": "package",
+      "sourceArchive": "9ba626afa44a3aa3",
+      "sourceItems": 4243,
+      "resultItems": 4245,
+      "originalItemsPreserved": 4243,
+      "addedItems": [
+        {
+          "type": "animation",
+          "name": "4cb7b7c50f25ddc0"
+        },
+        {
+          "type": "animation",
+          "name": "7d8cc9583080a3a4"
+        }
+      ],
+      "sourceSha256": "6f34132bb0f3f0aebbd4bd5b2d3b7fa6713a16727a4d6a2a17d5e5e37a051fce",
+      "resultSha256": "9042f41ffab752799caa1b3757b9e387ffbcc131b5284caee24209b8d8d0c36b",
+      "sourceBytes": 67904,
+      "resultBytes": 67936
+    },
+    "movementLogic": "requires ReloadAllowMove enabled separately; not changed by this asset patch",
+    "ability": "unchanged",
+    "validation": [
+      "archive byte-for-byte readback",
+      "native animations decoded",
+      "HD2SDK independent native curve decoder",
+      "two private animation IDs declared in original global package"
+    ],
+    "unverified": [
+      "game loading of private animation IDs",
+      "engine blend behavior",
+      "reload interrupt and ammo timing"
+    ]
+  },
+  "mg43RuntimeValidation": {
+    "name": "MG43 ReloadAllowMove prototype",
+    "build": "25480438",
+    "resource": "mods/hd2_local/mg43_mobile_reload",
+    "resourceHash": "16ba9d31edf2897f",
+    "sourceSha256": "802cde06a1f18ba58121bb89a4a6e06101ec96077a24097aa1bf860d949b0313",
+    "changedBytes": 1,
+    "recordIndex": 235,
+    "indexRow": 308,
+    "fieldOffset": 1,
+    "before": 0,
+    "after": 1,
+    "abilityChanged": false,
+    "durationChanged": false,
+    "vendorSha256": {
+      "bingus_runtime": "d4f9e0fd38759f920e26f92a060922f33f8f6cab159011759f2e1289daa258ac",
+      "bingus_memory": "c0cd003fa938368d020ad647c56c05f753fe102836943f8acb1f5b53a2fc0e15"
+    },
+    "offlineChecks": [
+      "compile",
+      "unique weapon record",
+      "one-byte write",
+      "readback",
+      "page restored",
+      "shutdown rollback",
+      "changed record refusal",
+      "existing enabled setting preserved",
+      "wrong record mapping refused",
+      "shared record refused"
+    ],
+    "globalKey": "MG43MobileReloadV1",
+    "guardName": "MG43MobileReload",
+    "stride": 80,
+    "unchangedOtherRecordBytes": 79,
+    "realBingusCoreCoexistenceChecks": [
+      "independent resource/global/guard names",
+      "both addons active together",
+      "original update preserved",
+      "closing MG43 preserves M1000",
+      "both original bytes restored"
+    ],
+    "deployed": false,
+    "liveGameTested": false
+  },
+  "m1000RuntimeValidation": {
+    "name": "M1000 mobile firing switch",
+    "build": "25480438",
+    "resource": "mods/hd2_local/m1000_mobile_fire",
+    "resourceHash": "b72dd76e2646369c",
+    "globalKey": "M1000MobileFireV1",
+    "guardName": "M1000MobileFire",
+    "sourceSha256": "538d98cf4c93c651eb2ea1a34dd3728af1cc95c13dd0734bb2853d6626e96913",
+    "entity": "43a58cb89cfa197c",
+    "component": "WeaponDataComponentData",
+    "recordIndex": 348,
+    "indexRow": 116,
+    "stride": 1232,
+    "field": "stationary_while_firing",
+    "fieldOffset": 387,
+    "before": 1,
+    "after": 0,
+    "changedBytes": 1,
+    "unchangedOtherRecordBytes": 1231,
+    "rateOfFireChanged": false,
+    "damageChanged": false,
+    "spinupChanged": false,
+    "animationEventsChanged": false,
+    "requires": "Bingus Shared Loader API 1",
+    "vendorSha256": {
+      "bingus_runtime": "d4f9e0fd38759f920e26f92a060922f33f8f6cab159011759f2e1289daa258ac",
+      "bingus_memory": "c0cd003fa938368d020ad647c56c05f753fe102836943f8acb1f5b53a2fc0e15"
+    },
+    "offlineChecks": [
+      "compile",
+      "unique weapon record",
+      "one-byte write",
+      "readback",
+      "page restored",
+      "shutdown rollback",
+      "changed record refusal",
+      "existing enabled setting preserved",
+      "wrong record mapping refused",
+      "shared record refused"
+    ],
+    "realBingusCoreCoexistenceChecks": [
+      "independent resource/global/guard names",
+      "both addons active together",
+      "original update preserved",
+      "closing MG43 preserves M1000",
+      "both original bytes restored"
+    ],
+    "archiveReadback": true,
+    "deployed": false,
+    "liveGameTested": false,
+    "finalManifest": "owned by root packaging"
+  },
+  "selectionMatrix": [
+    {
+      "selectedOptions": [],
+      "archiveTriads": 0,
+      "nativeResources": 0,
+      "addons": 0,
+      "filenamesDistinct": true,
+      "typedResourcesDistinct": true
+    },
+    {
+      "selectedOptions": [
+        0
+      ],
+      "archiveTriads": 2,
+      "nativeResources": 5,
+      "addons": 1,
+      "filenamesDistinct": true,
+      "typedResourcesDistinct": true
+    },
+    {
+      "selectedOptions": [
+        1
+      ],
+      "archiveTriads": 1,
+      "nativeResources": 1,
+      "addons": 1,
+      "filenamesDistinct": true,
+      "typedResourcesDistinct": true
+    },
+    {
+      "selectedOptions": [
+        0,
+        1
+      ],
+      "archiveTriads": 3,
+      "nativeResources": 6,
+      "addons": 2,
+      "filenamesDistinct": true,
+      "typedResourcesDistinct": true
+    }
+  ],
+  "arsenalManifest": {
+    "options": "two independent top-level checkboxes",
+    "defaults": "controlled by Arsenal setAllOptionsActive; no invented Default field"
+  },
+  "dependency": {
+    "name": "Bingus Shared Loader",
+    "api": 1,
+    "bundled": false
+  },
+  "deployed": false,
+  "arsenalImportTested": false,
+  "liveGameTested": false,
+  "locatorRegressionValidation": {
+    "expectedBroken": false,
+    "passed": true,
+    "gameProcessAccess": false,
+    "cases": [
+      {
+        "addon": "mg43",
+        "scenario": "split_allocation",
+        "result": "stopped|nil"
+      },
+      {
+        "addon": "mg43",
+        "scenario": "larger_allocation",
+        "result": "stopped|nil"
+      },
+      {
+        "addon": "mg43",
+        "scenario": "table_loaded_later",
+        "result": "stopped|nil"
+      },
+      {
+        "addon": "mg43",
+        "scenario": "query_error",
+        "result": "failed|offline-resource-fixture:92: memory query failed at 0x10000: offline-resource-fixture:45: fixture native query failure"
+      },
+      {
+        "addon": "mg43",
+        "scenario": "table_absent",
+        "result": "failed|offline-resource-fixture:224: entity allocation unavailable; v0.2.1 scans=5 regions=3 headers=0 candidates=0"
+      },
+      {
+        "addon": "mg43",
+        "scenario": "duplicate_valid_tables",
+        "result": "failed|offline-resource-fixture:228: ambiguous verified entity allocations; v0.2.1 scans=1 regions=5 headers=2 candidates=2"
+      },
+      {
+        "addon": "mg43",
+        "scenario": "header_decoy",
+        "result": "stopped|nil"
+      },
+      {
+        "addon": "m1000",
+        "scenario": "split_allocation",
+        "result": "stopped|nil"
+      },
+      {
+        "addon": "m1000",
+        "scenario": "larger_allocation",
+        "result": "stopped|nil"
+      },
+      {
+        "addon": "m1000",
+        "scenario": "table_loaded_later",
+        "result": "stopped|nil"
+      },
+      {
+        "addon": "m1000",
+        "scenario": "query_error",
+        "result": "failed|offline-resource-fixture:92: memory query failed at 0x10000: offline-resource-fixture:45: fixture native query failure"
+      },
+      {
+        "addon": "m1000",
+        "scenario": "table_absent",
+        "result": "failed|offline-resource-fixture:224: entity allocation unavailable; v0.2.1 scans=5 regions=3 headers=0 candidates=0"
+      },
+      {
+        "addon": "m1000",
+        "scenario": "duplicate_valid_tables",
+        "result": "failed|offline-resource-fixture:228: ambiguous verified entity allocations; v0.2.1 scans=1 regions=5 headers=2 candidates=2"
+      },
+      {
+        "addon": "m1000",
+        "scenario": "header_decoy",
+        "result": "stopped|nil"
+      }
+    ]
+  },
+  "windowsLocatorValidation": {
+    "passed": true,
+    "gameProcessAccess": false,
+    "cases": [
+      {
+        "addon": "mg43",
+        "splitProtection": false,
+        "result": "actual Win32 query/read/protect/write/restore; private fixture allocation freed"
+      },
+      {
+        "addon": "mg43",
+        "splitProtection": true,
+        "result": "actual Win32 query/read/protect/write/restore; private fixture allocation freed"
+      },
+      {
+        "addon": "m1000",
+        "splitProtection": false,
+        "result": "actual Win32 query/read/protect/write/restore; private fixture allocation freed"
+      },
+      {
+        "addon": "m1000",
+        "splitProtection": true,
+        "result": "actual Win32 query/read/protect/write/restore; private fixture allocation freed"
+      }
+    ]
+  },
+  "arsenalManifestValidation": {
+    "passed": true,
+    "actualWrites": 0,
+    "verified": [
+      "native import defaults",
+      "independent option combinations",
+      "name-based optionsConfig merge",
+      "Include folder selection",
+      "same archive renumbering with intact triplets",
+      "empty root deploys nothing"
+    ],
+    "sources": {
+      "modsHandler": "b9f05326d324ec0c55d0dbe8280ea0cbc0c1ca630a2561ac793b2e943cf4a435",
+      "modDeployer": "66dda969652da90b00ef57160ae94fecd86c0d866b3bada44c6aa8388602edc5"
+    },
+    "manifestSha256": "24ebbd69e5c615f69f680bfcf1f6fbaf8fad5f71b7416a33fca076d85d9d8dff"
+  }
+}

@@ -1,0 +1,15 @@
+assets/
+vendor/
+node_modules/
+build/
+dist/
+PROJECT-STATE.md
+reference/*.json
+__pycache__/
+*.py[cod]
+*.log
+.env
+.env.*
+!.env.example
+Thumbs.db
+.DS_Store

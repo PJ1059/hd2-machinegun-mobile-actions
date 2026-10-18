@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>MG-43 · 动作预览</title>
+  <link rel="stylesheet" href="viewer.css">
+  <script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="identity"><span class="mark" aria-hidden="true">43</span><div><h1>MG-43 <span>动作预览</span></h1><p>移动换弹 / 离线工作台</p></div></div>
+      <div class="header-status"><span class="status-dot" aria-hidden="true"></span><span id="statusText" role="status">正在加载资源</span><span class="tag">游戏内未验证</span></div>
+    </header>
+
+    <main class="workspace">
+      <section class="viewer-panel" aria-label="三维动作预览">
+        <div id="viewport" tabindex="0" aria-label="三维视口。拖动旋转，滚轮缩放，右键拖动平移。">
+          <div class="view-label"><span class="eyebrow">PERSPECTIVE</span><span id="activeLabel">新版 · 站立换弹</span></div>
+          <div class="view-tools" aria-label="预设视角">
+            <button data-view="threequarter" class="selected" aria-pressed="true">全身</button>
+            <button data-view="front" aria-pressed="false">正面</button>
+            <button data-view="side" aria-pressed="false">侧面</button>
+            <button data-view="hands" aria-pressed="false">手部</button>
+          </div>
+          <div id="loading" class="viewport-message"><span class="loading-ring" aria-hidden="true"></span><strong id="loadingTitle">正在准备三维资源</strong><p id="loadingDescription">加载角色、武器与动作数据。</p><button id="retry" hidden>重新加载</button></div>
+          <div class="viewport-bottom"><span class="axis-key"><i class="axis-x"></i>X <i class="axis-z"></i>Z <span>地面每格 0.5 m</span></span><span>拖动旋转 · 滚轮缩放 · 右键平移</span></div>
+        </div>
+
+        <section class="transport" aria-label="播放控制">
+          <div class="transport-top"><div class="play-controls"><button id="play" class="play-button" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path id="playIcon" d="m9 5 11 7-11 7z"/></svg><span id="playLabel">播放</span></button><button id="reset" title="回到开头" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14M18 5 8 12l10 7z"/></svg><span class="sr-only">回到开头</span></button><output id="timeReadout">0.00 <span>/ 0.00 s</span></output></div><label class="speed-label">播放速度<select id="speed"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label></div>
+          <div class="timeline-wrap"><input id="timeline" type="range" min="0" max="1" step="0.001" value="0" aria-label="动作时间轴" disabled><div id="stageTicks" aria-hidden="true"></div></div>
+          <div class="transport-bottom"><span id="currentStage">等待动作</span><span>空格 播放 / 暂停 <span class="shortcut-divider">·</span> ← → 逐帧</span></div>
+        </section>
+      </section>
+
+      <aside class="inspector" aria-label="预览设置">
+        <section class="inspector-section"><h2>动作版本</h2><div class="segmented" id="variantGroup"><button data-variant="new" aria-pressed="true" class="selected">新版</button><button data-variant="original" aria-pressed="false">原版对照</button></div><p id="variantDescription" class="help">站姿换弹动作原型</p></section>
+        <section class="inspector-section"><h2>移动状态</h2><div class="mode-buttons" id="modeGroup"><button data-mode="stand" aria-pressed="true" class="selected"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M8 11V8h8v3M12 8v7m0 0-3 6m3-6 3 6"/></svg><span>站立换弹</span><small>检查手部与枪械操作</small></button><button data-mode="walk" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="14" cy="4" r="2"/><path d="m7 11 4-4 4 5 4 1m-8-6-1 8 5 6m-5-6-4 6"/></svg><span>行走换弹</span><small>检查步态与上身衔接</small></button><button data-mode="run" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="16" cy="3.5" r="2"/><path d="m5 9 5-3 4 4 5-1m-9-3-2 7 6 3-2 5m-4-8-4 5H1"/></svg><span>奔跑换弹</span><small>检查奔跑步态与持枪稳定性</small></button></div></section>
+        <section class="inspector-section"><h2>查看辅助</h2><label class="switch-row"><span>地面网格</span><input id="gridToggle" type="checkbox" checked></label><label class="switch-row"><span>显示骨骼</span><input id="skeletonToggle" type="checkbox"></label><label class="switch-row"><span>循环播放</span><input id="loopToggle" type="checkbox" checked></label></section>
+        <section class="inspector-section steps-section"><h2>动作阶段</h2><ol id="stageList"><li class="empty-stage">等待动作数据</li></ol></section>
+        <section class="verification"><span class="eyebrow">当前验证范围</span><p id="verificationText">离线检查姿态、手部接触与穿模。游戏内状态切换及弹药逻辑仍需实测。</p><details><summary>资源信息</summary><dl><div><dt>模型</dt><dd id="modelInfo">加载中</dd></div><div><dt>当前动作</dt><dd id="clipInfo">—</dd></div><div><dt>来源</dt><dd id="sourceInfo">等待数据</dd></div></dl></details></section>
+      </aside>
+    </main>
+  </div>
+  <script type="module" src="viewer.js"></script>
+</body>
+</html>
